@@ -54,6 +54,27 @@ h2{
   font-weight: 500;
   text-align: left;
   color: #9aa0a5;
+  cursor: pointer;
+
+  span{
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-right: .7rem;
+    background-color: rgb(128 128 128 / 32%);
+    position: relative;
+
+    &::before{
+      content: '+';
+      line-height: 1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -60%);
+    }
+  }
 }
 
 i, s, code, code > span{
@@ -119,14 +140,6 @@ article {
         left: -21px;
         border: 1px solid #486985;
         border-radius: 50%;
-        // width: 10px;
-        // height: 10px;
-        // border-radius: 0% 50% 0% 50%;
-        // position: absolute;
-        // top: 4px;
-        // left: -1.2rem;
-        // background-color: #6f94b2;
-        // box-shadow: 2px 2px #3b4e5e;
       }
     }
 
@@ -202,6 +215,24 @@ article {
     }
 
   }
+
+  .dropdown{
+    display: none;
+    animation: fadeIn .4s ease-in-out;
+  }
+
+  input[type=checkbox]{
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ label h2 span::before{
+    content: '-';
+  }
+
+  input[type=checkbox]:checked ~ .dropdown{
+    display: block;
+  }
+  
 }
 
 app-react,
@@ -216,6 +247,17 @@ app-git {
 @keyframes appear {
   0%{
     transform: translateY(2rem);
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn{
+  0%{
+    transform: translateY(-1rem);
     opacity: 0;
   }
   100%{
@@ -272,5 +314,9 @@ app-git {
   h1 {
     font-size: 7vh;
     margin: 2rem 0;
+  }
+
+  h2{
+    font-size: 1.3rem;
   }
 }
