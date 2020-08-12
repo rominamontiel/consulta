@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="9px" viewBox="0 0 12 9" version="1.1">
+    
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 12 0 12 9 0 9"/>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03-steps" transform="translate(-1000.000000, -457.000000)">
+            <g id="Group-3" transform="translate(1000.000000, 457.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"/>
+                </mask>
+                <g id="Clip-2"/>
+                <path d="M9.4762106,6.3 L8.76954957,7 L6.95242121,5.2 L5.13529284,7 L4.42863181,6.3 L6.24576018,4.5 L4.42863181,2.7 L5.13529284,2 L6.95242121,3.8 L8.76954957,2 L9.4762106,2.7 L7.65908224,4.5 L9.4762106,6.3 Z M10.9904842,0 L3.41911606,0 C3.06578554,0 2.8134066,0.15 2.61150345,0.45 L0.094998402,4.18917647 C-0.031666134,4.37739216 -0.031666134,4.62260784 0.094998402,4.81084314 L2.61150345,8.55 C2.8134066,8.8 3.06578554,9 3.41911606,9 L10.9904842,9 C11.5457179,9 12,8.55 12,8 L12,1 C12,0.45 11.5457179,0 10.9904842,0 Z" id="Fill-1" fill="#323C47" mask="url(#mask-2)"/>
+            </g>
+        </g>
+    </g>
+</svg>
