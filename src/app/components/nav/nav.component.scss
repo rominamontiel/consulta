@@ -1,0 +1,129 @@
+.container-gral{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+    .menu-mobile,
+    .touch-background {
+        display: none;        
+    }
+
+    nav{
+        width: 18rem;
+        background-color: #272522;
+        padding-top: 1rem;
+
+        header{
+            padding: 1rem 2rem;
+            font-size: 1.7rem;
+            color: #93c8f7;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+
+            .logo{
+                width: 2rem;
+                height: 2rem;
+                // border-radius: 0% 50% 0% 50%;
+                // background-color: #93c8f7;
+                // box-shadow: 2px 4px rgb(87, 123, 153);
+                margin-right: .7rem;
+                display: flex;
+
+                img{
+                    height: 100%;
+                }
+            }
+        }
+    
+        a{
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            height: 4rem;
+            padding: 0 2rem;
+            cursor: pointer;
+            color: #a7a7a7;
+            text-decoration: none;
+            position: relative;
+
+            &:hover,
+            &.active{
+                background-color: #31302f;
+                color: #c0c0c0;
+            }
+    
+            img{
+                width: 1.5rem;
+                margin-right: .7rem;
+            }
+        }
+    }
+
+    .main-content{
+        width: calc(100% - 18rem);
+        height: 100%;        
+        overflow-y: auto;
+    }
+}
+
+@media(max-width: 992px){
+    .container-gral{
+        .menu-mobile{
+            position: fixed;
+            width: 3rem;
+            height: 3rem;
+            background: #31302f;
+            z-index: 4;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+
+            img {
+              width: 1.3rem;
+            }
+        }
+
+        .touch-background{
+            z-index: -1;
+            display: block;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            background-color: transparent;
+
+            &.active{
+                z-index: 2;
+            }
+        }
+        
+
+        nav{
+            position: fixed;
+            left: -82vw;
+            z-index: 3;
+            background: #31302f;
+            height: 100vh;
+            width: 80vw;
+            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            transition-duration: .5s;
+            
+            a{
+                height: 4.3rem;
+            }
+            
+            &.active{
+                left: 0;
+            }
+        }
+
+        .main-content{
+            width: 100vw;
+        }
+    }
+}

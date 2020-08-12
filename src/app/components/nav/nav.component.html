@@ -1,0 +1,33 @@
+<div class="container-gral">
+    <div class="menu-mobile" (click)="menuMobile()">
+        <img src="assets/img/menu.svg" alt="">
+    </div>
+    <div class="touch-background" [ngClass]="{'active': menu}" (click)="menuMobile()"></div>
+    <nav [ngClass]="{'active': menu}">
+        <header><div class="logo"><img src="assets/img/favicon.svg" alt=""></div>Consultas</header>
+        <a [routerLink]="['/angular']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/angular.png" alt="">Angular
+        </a>
+        <a [routerLink]="['/css']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/css.png" alt="">CSS
+        </a>    
+        <a [routerLink]="['/git']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/git.png" alt="">Git
+        </a>
+        <a [routerLink]="['/javascript']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/javascript.png" alt="">Javascript 
+        </a>
+        <a [routerLink]="['/react']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/react.png" alt="">React
+        </a>
+        <a [routerLink]="['/html']" routerLinkActive="active" (click)="menuMobile()">
+            <img src="assets/img/html.png" alt="">Html
+        </a>
+        <a [routerLink]="['/recursos']" routerLinkActive="active" (click)="menuMobile()">
+          <img src="assets/img/recursos.png" alt="">Recursos
+        </a>
+    </nav>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

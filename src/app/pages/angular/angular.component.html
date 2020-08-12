@@ -1,0 +1,77 @@
+<article>
+  <h1>Angular</h1>
+  <h2>Comandos básicos</h2>
+
+  <ul>
+    <li>Crear proyecto: <i>ng new mi-proyecto</i> seguido de <i>cd mi-proyecto</i></li>
+    <li>Para instalar un proyecto: <i>npm install</i></li>
+    <li>Para levantar un proyecto: <i>npm start</i></li>
+    <li>Para generar un componente: <i>ng generate component pages/home</i></li>
+    <li>En <s>src/</s> se crea el archivo <s>style.scss</s> donde van los estilos globales</li>
+    <li>Levantar el proyecto para verlo desde el celular: <i>ng serve --host 0.0.0.0</i> y desde el celular ingresar a la ip de la pc y agregar <s>:4200</s> ejemplo: <s>192.168.88.13:4200/</s></li>
+  </ul>
+</article>
+
+<article>
+  <h2>Cómo iniciar un proyecto</h2>
+  <ul class="number">
+    <li>Ejecuto <i>ng new mi-proyecto</i> seguido de <i>cd mi-proyecto</i></li>
+    <li>Crear carpetas para componentes y páginas: <i>ng generate component components/nav</i> y <i>ng generate component pages/home</i></li>
+    <li>Para enrutar: ir al archivo <s>app-routing.module.ts</s> <br>
+        e importar cada nuevo componente: <s>import {{'{'}} NavComponent {{'}'}} from './components/nav/nav.component';</s> <br>
+        Luego en <s>const routes: Routes = [];</s> agregar para cada componente (entre llaves) su <s>path</s> y <s>component</s> <br>
+        Para que quede de la siguiente manera:
+        <pre><code>
+const routes: Routes = [{{'{'}}
+  path: 'home',
+  component: HomeComponent
+  {{'}'}},{{'{'}}
+  path: '',
+  component: NavComponent
+{{'}'}}];
+        </code></pre>
+    </li>
+    <li>Agregar sus componentes hijos en <s>children: []</s> entre corchetes cada uno y separados por coma. <br>
+      <pre><code>
+const routes: Routes = [{{'{'}}
+  path: '',
+  component: NavComponent,    
+  children: [{{'{'}}
+      path: 'css',
+      component: CssComponent
+    {{'}'}},{{'{'}}
+      path: 'git',
+      component: GitComponent
+    {{'}'}},{{'{'}}
+      path: '',
+      redirectTo: '/git',
+      pathMatch: 'full'
+    {{'}'}}]
+  {{'}'}}];
+      </code></pre>
+    </li>
+    <li>Agregar siempre un <s>redirectTo</s> para que ante <s>''</s> (por ejemplo) redirija a un componente deseado <br>
+      <pre><code>
+{{'{'}} path: '',
+  redirectTo: '/angular',
+  pathMatch: 'full' {{'}'}} 
+
+</code></pre>
+  También para pantalla 404
+  <pre><code>
+{{'{'}} path: '**',
+  redirectTo: '404error',
+{{'}'}}];
+  </code></pre>
+  </li> 
+  </ul>
+</article>
+
+<article>
+  <h2>Como borrar un componente</h2>
+  <ul>
+    <li>Quitarlo de <s>app.module.ts</s> </li>
+    <li>Quitarlo del <s>app-routing.module.ts</s> (quitar el import y el path)</li>
+    <li>Borrar la carpeta a mano</li>
+  </ul>
+</article>

@@ -1,0 +1,13 @@
+article{
+    padding: 1rem 2rem;
+    margin: 3rem auto;
+}
+
+@media (max-width: 992px) {
+  article {
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+}

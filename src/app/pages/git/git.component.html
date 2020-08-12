@@ -1,0 +1,49 @@
+<article>
+  <h1>Git</h1>
+  <div class="content">
+    <h2>Comandos básicos</h2>
+    <ul>
+      <li>Clonar un repo en mi pc <i>git clone url</i></li>
+      <li>Detectar cambios con respecto al repo subido: <i>git status</i></li>
+      <li>Agregar los cambios que se van a subir: <i>git add</i> (carpeta o archivo)</li>
+      <li>Agregar todos los cambios que se quieren commitear: <i>git add .</i></li>
+      <li>Commitear los cambios agregados: <i>git commit -m "mensaje"</i></li>
+      <li>Subir los cambios a la rama dev por ejemplo: <i>git push origin dev</i></li>
+      <li>Reservar los cambios para aplicarlos después: <i>git stash</i></li>
+      <li>Bajar todas las ramas de un repo: <i>git pull origin</i></li>
+      <li>Bajar/actualizar una rama de un repo: <i>git pull origin nombre-rama</i></li>
+      <li>Verificar la url del repo: <i>git remote -v</i></li>
+      <li>Reemplazar el repositorio remoto vinculado: <i>git remote set-url origin https://...</i></li>
+      <li>Cambiar de rama: <i>git checkout nombre-rama</i></li>
+      <li>Crear rama desde la rama donde estoy: <i>git checkout -b nombre-rama</i></li>
+      <li>¿En qué rama estoy? <i>git branch</i></li>
+      <li>Borrar una rama: <i>git branch -d nombre-rama</i></li>
+      <li>Ver historial de commits <i>git log</i></li>
+    </ul>
+  </div>
+</article>
+<article>
+  <div class="content">
+    <h2>Cómo subir y publicar un proyecto Angular en GitHub (GH-Pages)</h2>
+    <ul class="number">
+      <li>Crear proyecto angular localmente</li>
+      <li>Instalar de manera global: <i>npm install -g angular-cli-ghpages</i></li>
+      <li>Crear repo en <a href="https://github.com/new">GitHub</a> y vincular nuestro repo de manera local: <i>git remote add origin https://github.com/USER/REPOSITORY.git</i></li>
+      <li>Subir el repo: <i>git push -u origin master</i></li>
+      <li>Ejecutar: <i>ng build --prod</i> para que se arme correctamente la carpeta <s>dist/proyecto</s></li>
+      <li>Empaquetado de la aplicación, ejecutar: <i>ng build --prod --base-href https://USERNAME.github.io/REPOSITORY/</i> (importante barra final)</li>
+      <li>Ejecutar para publicar: <i>npx ngh --dir=dist/proyecto</i> (con poner la primer letra del nombre del proyecto y tabular alcanza)</li>
+      <li>Entrar al repo en github <s>-></s> settings <s>-></s> GitHub Pages <s>-></s> Cambiar source a <s>gh-pages
+          branch</s>
+      </li>
+      <li>Sitio publicado en: <s>https://USERNAME.github.io/REPOSITORY/</s></li>
+    </ul>
+    <h2>Cómo actualizar el repo:</h2>
+    <ul class="number">
+      <li>Commitear cambios y subirlo a <s>master</s></li>
+      <li>Ejecutar: <i>ng build --prod</i></li>
+      <li>Ejecutar: <i>ng build --prod --base-href https://USERNAME.github.io/REPOSITORY/</i></li>
+      <li>Ejecutar para publicar: <i>npx ngh --dir=dist/proyecto</i></li>
+    </ul>
+  </div>
+</article>

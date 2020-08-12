@@ -1,0 +1,98 @@
+<article>
+  <h1>CSS</h1>
+  <h2>Scroll custom</h2>
+  <pre><code>
+::-webkit-scrollbar {{'{'}}<span>
+    width: 5px;
+    height: 5px;</span> 
+{{'}'}}
+::-webkit-scrollbar-track {{'{'}}<span>
+    background: transparent;</span>
+{{'}'}}
+::-webkit-scrollbar-thumb {{'{'}}<span>
+    background: rgb(201, 201, 201);
+    border-radius: 10px;</span>
+{{'}'}}
+::-webkit-scrollbar-thumb:hover {{'{'}}<span>
+    background: rgb(141, 141, 141);</span>
+{{'}'}}
+    </code></pre>  
+</article>
+
+<article>
+  <h2>Sacarle el fondo a input de Autocompletar, autofill</h2>
+  <pre><code>
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {{'{'}}<span>
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 9000s ease-in-out 0s;</span>
+{{'}'}}
+  </code></pre>
+</article>
+
+<article>
+  <h2>Transiciones</h2>
+  <pre><code><span>
+cubic-bezier(0.29, 0.37, 0, 0.99)
+cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  </span></code></pre>
+  <h2>Box-shadow</h2>
+  <pre><code><span>
+box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.1);
+  </span></code></pre>
+</article>
+
+<article>
+  <h2>nth:child - Pares, impares, numero</h2>
+  <pre><code>
+:nth-child()<b> - nro de elemento en un grupo de hermanos</b>
+:nth-child(even)<b> - par</b> 
+:nth-child(odd)<b> - impar</b>
+:first-child<b> - primer hijo</b>
+:nth-child(2n)<b> - de 2 en 2 (elementos 2, 4, 6, 8)</b>
+:nth-child(5n)<b> - de 5 en 5 (elementos 5, 10, 15)</b>
+:nth-child(-n+3)<b> - primeros 3 elementos</b>
+:nth-child(3n+4)<b> - elemento 4 y de 3 en 3 (4, 7, 10, 13)</b>
+:nth-child(2n+1)<b> - 1er elemento y +2 (1,3,5,7)</b>
+:not(:first-child)<b> - todos menos el primero</b>
+  </code></pre>
+</article>
+
+<article>
+  <h2>Texto vertical</h2>
+  <pre><code><span>
+writing-mode: vertical-rl;<b> - girado 90 grados</b>
+text-orientation: upright;<b> - cada letra "en un renglon"</b>
+  </span></code></pre>
+</article>
+
+<article>
+  <h2>Video 16:9 proporcional</h2> (al contenedor del video y el iframe al 100%)
+  <pre><code><span>
+width: 50vw;
+height: calc((56.25 * 50vw)/ 100);
+  </span></code></pre>
+</article>
+
+<article>
+  <h2>Cortar un texto al ancho deseado y sin salto de linea</h2>
+  <pre><code><span>
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+width: -definir-
+  </span></code></pre>
+  <h2>Cortar un párrafo en X líneas</h2>
+  <pre><code><span>
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+  </span></code></pre>
+</article>
+
+
+
+
