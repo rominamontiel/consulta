@@ -12,6 +12,8 @@ import { JavascriptComponent } from './pages/javascript/javascript.component';
 import { GitComponent } from './pages/git/git.component';
 import { HtmlComponent } from './pages/html/html.component';
 import { RecursosComponent } from './pages/recursos/recursos.component';
+import { FlechasLateralesComponent } from './work-done/flechas-laterales/flechas-laterales.component';
+import { WorksComponent } from './pages/works/works.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RecursosComponent } from './pages/recursos/recursos.component';
     JavascriptComponent,
     GitComponent,
     HtmlComponent,
-    RecursosComponent
+    RecursosComponent,
+    FlechasLateralesComponent,
+    WorksComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<div class="box">
+    <div class="container">
+      <h3>Ilustraciones</h3>
+      <div class="scroll-btn left" *ngIf="ilustraciones.length > 4 && displacement > 0" (click)="displacementLeft()">
+        <img src="assets/img/recursos/down_arrow.svg" alt="">
+      </div>
+      <div class="scroll-btn right" *ngIf="ilustraciones.length > 4 && displacement < maxTranslate" (click)="displacementRight()">
+        <img src="assets/img/recursos/down_arrow.svg" alt="">
+      </div>
+      <div class="box-large">
+        <div class="displacement-content" [ngStyle]="{'transform': translateTotal }">
+          <div class="card" *ngFor="let name of ilustraciones">
+            <div class="content-img">
+                <img src="assets/img/horoscopo/{{name}}.jpg" class="img-cover" alt="">
+                <div class="content-txt">
+                    <h3>{{name}}</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat est dolores quas.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

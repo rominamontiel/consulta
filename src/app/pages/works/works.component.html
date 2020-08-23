@@ -1,0 +1,166 @@
+<article>
+    <h2>Flechas y Scroll Laterales</h2>
+
+    <app-flechas-laterales></app-flechas-laterales>
+
+    <input type="checkbox" name="" id="art1">
+    <label for="art1">
+      <h2><span></span>Código</h2>
+    </label>
+    <div class="dropdown">
+        <i>-- HTML --</i>
+        <P><s>1. </s>Un contenedor general relative para los botones de izquierda y derecha <s>[&lt;]</s> <s>[&gt;]</s><br>
+            <s>2. </s>Un div para cada boton <s>scroll-btn</s> con un <s>img</s> (flecha) dentro.<br>
+            <s>3. </s>Una caja con overflow: hidden <s>box-large</s> que contenga al div que se va mover de izquierda a derecha<br>
+            <s>4. </s>Un contenedor desplazable <s>displacement-content</s> con un <s>[ngStyle]</s> que va recibir el <s>translateX(+-25%)</s><br>
+            <s>5. </s>Cada caja que ocupa 22% del <s>box-large</s>, por lo que se muestran 4. (Margin de 3%)</P>
+        <pre><code>
+&lt;div class="container"&gt;
+  &lt;h3&gt;Próximas Clases&lt;/h3&gt;
+  &lt;div class="scroll-btn left" (click)="displacementLeft()"&gt;
+    &lt;img src="assets/img/desplazamiento.svg" alt=""&gt;
+  &lt;/div&gt;
+  &lt;div class="scroll-btn right" (click)="displacementRight()"&gt;
+    &lt;img src="assets/img/desplazamiento.svg" alt=""&gt;
+  &lt;/div&gt;
+  &lt;div class="box-large"&gt;
+    &lt;div class="displacement-content" [ngStyle]="{{'{'}}'transform': translateTotal {{'}'}}"&gt;
+      &lt;div class="class" *ngFor="let class of classes"&gt;
+        [ contenido de la card ]
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+        <br>
+        <i>-- .TS --</i>
+        <p><s>1. </s>un array de cantidad de clases: <s>classes</s><br>
+          <s>2. </s>variable/contador de 25 en 25<br>
+          <s>3. </s>variable con el valor del translate string<br>
+          <s>4. </s>una función para cada boton izquierdo y derecho</p>
+        <pre><code>
+public displacement: number = 0;
+public translateTotal:String = '';
+
+
+public displacementRight() {{'{'}}
+    let maxTranslate = this.classes.length * 25 - 100;
+    if (this.displacement &gt;= 0 && this.displacement &lt; maxTranslate) {{'{'}}
+      this.displacement += 25;
+    {{'}'}}
+    this.translateTotal = 'translateX(-' + this.displacement + '%)';
+  {{'}'}}
+
+
+  public displacementLeft() {{'{'}}
+    if(this.displacement &gt; 0){{'{'}}
+      this.displacement -= 25;
+    {{'}'}}
+    this.translateTotal = 'translateX(-' + this.displacement + '%)';
+  {{'}'}}            
+        </code></pre>
+        <br>
+        <i>-- SCSS --</i>
+        <pre><code>
+.container {{'{'}}
+    position: relative;
+
+    .scroll-btn {{'{'}}
+        position: absolute;
+        right: -1%;
+        top: 54%;
+        height: 1.3rem;
+        cursor: pointer;
+        z-index: 1;
+        transform: rotate(-90deg);
+
+        img {{'{'}}
+            height: 100%;
+            transition: all .1s ease-in-out;
+        {{'}'}}
+
+        &.left {{'{'}}
+            left: -4%;
+            right: initial;
+            transform: rotate(-270deg);
+        {{'}'}}
+
+        &:hover {{'{'}}
+            img {{'{'}}
+                transform: scale(1.1);
+            {{'}'}}
+        {{'}'}}
+
+        &:active {{'{'}}
+            img {{'{'}}
+                transform: scale(0.9);
+            {{'}'}}
+        {{'}'}}
+    {{'}'}}
+
+    .box-large {{'{'}}
+        margin: 2rem 0 4rem 0;
+        overflow-x: hidden;
+
+        .displacement-content {{'{'}}
+            width: auto;
+            white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.29, 0.37, 0, 0.99);
+
+            .class {{'{'}}
+                margin-right: 3%;
+                width: 22%;
+                height: auto;
+                background: rgba(196, 191, 192, 0.2);
+                border-radius: 1rem;
+                overflow: hidden;
+                display: inline-block;
+
+                // (contenido de cada tarjeta)
+            {{'}'}}
+        {{'}'}}
+    {{'}'}}
+{{'}'}}
+
+@media(max-width: 992px) {{'{'}}
+    .container {{'{'}}
+
+        .scroll-btn {{'{'}}
+            display: none;
+        {{'}'}}
+
+        .box-large {{'{'}}
+            overflow-x: auto;
+
+            .displacement-content .class {{'{'}}
+                width: 85%;
+                margin-right: 5%;
+            {{'}'}}
+        {{'}'}}
+    {{'}'}}
+{{'}'}}
+        </code></pre>
+        <br>
+        <i>-- Mejoras: Esconder las flechas cuando llegue al tope --</i>
+        <p>
+            <s>1. </s>Definir en una variable el largo del array: <s>public maxTranslate:number;</s><br>
+            <s>2. </s>Setearle en el ngOnInit → <s>this.maxTranslate = (this.classes.length * 25) - 100;</s><br>
+            <s>3. </s>(Esto es para casos donde las tarjetas estan en un array que viene de una api y tarda). Al setear maxTranslate en ngOnInit hace que se setee antes de que se cargue el array y va tirar error de length. Por eso hay que ponerle un <s>ngIf</s> en el <s>&lt;app-component&gt;</s> con el array. Ejemplo: <br>
+            <s>&lt;app-class [classes]='classes' *ngIf="classes"&gt;&lt;/app-class&gt;</s><br>
+            <s>4. </s>Quitar el <s>let maxTranslate(...)</s> y agregarle <s>this.</s> a <s>maxTranslate</s>
+            <s>5. </s>A cada botón ponerle el if que corresponda:
+        </p>
+        <pre><code>
+&lt;div class="scroll-btn left" *ngIf="freeClasses.length &gt; 4 && displacement &gt; 0" (click)="displacementLeft()"&gt; 
+    </code></pre>
+    - mostrar el botón izquierdo [&lt;] siempre y cuando la cantidad de tarjetas sea mayor que 4 (5 o más) <br>
+    <s>&&</s><br>
+    - mostrar boton izquierdo [&lt;] siempre y cuando la variable de displacement sea mayor de 0 (o sea se haya trasladado al menos 25%)
+<pre><code>
+    &lt;div class="scroll-btn right" *ngIf="freeClasses.length &gt; 4 && displacement &lt; maxTranslate" (click)="displacementRight()"&gt;
+    </code></pre>
+    - mostrar el botón derecho [&gt;] siempre y cuando la cantidad de tarjetas sea mayor que 4 (5 o más) <br>
+    <s>&&</s><br>
+    - mostrar boton derecho [&gt;] siempre y cuando el desplazamiento (displacement) no sea mayor que el tope (maxTranslate)
+    </div>
+</article>

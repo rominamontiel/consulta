@@ -9,6 +9,7 @@ import { CssComponent } from './pages/css/css.component';
 import { GitComponent } from './pages/git/git.component';
 import { HtmlComponent } from './pages/html/html.component';
 import { RecursosComponent } from './pages/recursos/recursos.component';
+import { WorksComponent } from './pages/works/works.component';
 
 
 const routes: Routes = [{
@@ -38,6 +39,9 @@ const routes: Routes = [{
     },{
       path: 'recursos',
       component: RecursosComponent
+    },{
+      path: 'trabajos',
+      component: WorksComponent
     },{
       path: '',
       redirectTo: '/angular',
