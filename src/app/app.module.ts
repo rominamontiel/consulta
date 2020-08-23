@@ -14,6 +14,7 @@ import { HtmlComponent } from './pages/html/html.component';
 import { RecursosComponent } from './pages/recursos/recursos.component';
 import { FlechasLateralesComponent } from './work-done/flechas-laterales/flechas-laterales.component';
 import { WorksComponent } from './pages/works/works.component';
+import { BoxShadowsComponent } from './work-done/box-shadows/box-shadows.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WorksComponent } from './pages/works/works.component';
     HtmlComponent,
     RecursosComponent,
     FlechasLateralesComponent,
-    WorksComponent
+    WorksComponent,
+    BoxShadowsComponent
   ],
   imports: [
     BrowserModule,

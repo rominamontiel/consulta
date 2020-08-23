@@ -136,10 +136,12 @@
 
     .box-large {
       overflow-x: auto;
+      scroll-snap-type: x mandatory;
 
       .displacement-content .card {
         width: 85%;
         margin-right: 5%;
+        scroll-snap-align: center;
 
         .content-img .content-txt{
           padding: 2rem 1.5rem;
