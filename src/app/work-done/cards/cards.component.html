@@ -1,0 +1,36 @@
+<section>
+    <div class="container-gral">
+
+        <div class="left" (click)="buttonLeft()"></div>
+        <div class="right" (click)="buttonRight()"></div>
+
+        <div class="card {{profile.clase}}"  *ngFor="let profile of profiles; let i = index">            
+            <div class="graphic-profile">
+                <img src="assets/img/perfil/{{profile.name}}.jpg" alt="" class="img-back">
+                <img src="assets/img/perfil/{{profile.name}}.jpg" alt="" class="img-profile">
+            </div>
+            <div class="info-profile">
+                <h3 class="name">{{profile.name}}</h3>
+                <p class="description">Ilustraciones realizadas por la artista SakimiChan. Colección de signos zodiacales</p>
+                <div class="followers">
+                    <div>
+                        <span class="number">352k</span>
+                        <span class="bot">Seguidores</span>
+                    </div>
+                    <div>
+                        <span class="number">2.5k</span>
+                        <span class="bot">Siguiendo</span>
+                    </div>
+                    <div>
+                        <span class="number">580</span>
+                        <span class="bot">Archivos</span>
+                    </div>
+                </div>
+                <div class="btn-action">
+                    <a href="">Seguir</a>
+                    <a href="">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
