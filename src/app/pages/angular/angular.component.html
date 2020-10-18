@@ -150,3 +150,43 @@
     </code></pre>
   </div>    
 </article>
+
+<article>
+  <input type="checkbox" name="" id="art5">
+  <label for="art5">
+    <h2><span></span>Cómo enviar string por link y capturarlo</h2>
+  </label>
+  <div class="dropdown">
+    <ul>
+      <li>Setear qué string se le agrega al link en el componente emisor
+        <p><s>&lt;a [routerLink]="['/table-menu']" [queryParams]="{{'{'}}order: 'inprogress'{{'}'}}"&gt; Go! &lt;/a&gt;</s></p>
+      </li>
+      <li>
+        <p>Importar en el ts del componente receptor</p>
+        <s>import {{'{'}} ActivatedRoute {{'}'}} from '@angular/router';</s>
+      </li>
+      <li>
+        <p>crear una variable string</p>
+        <s>public currentOrder:string = '';</s>
+      </li>
+      <li>
+        <p>En el constructor:</p>
+        <s>constructor( private route: ActivatedRoute ) {{'{'}} {{'}'}}</s>
+      </li>
+      <li>
+        <p>En el ngOnInit</p>
+<pre><code>
+ngOnInit() {{'{'}}
+  this.route.queryParams.subscribe(params => {{'{'}}
+    this.currentOrder = params.order;
+  {{'}'}});
+{{'}'}}
+</code></pre>
+      </li>
+      <li>
+        <p>En el html del componente receptor, por ejemplo</p>
+        <s>*ngIf="currentOrder === 'inprogress'"</s>
+      </li>
+    </ul>
+  </div>
+</article>

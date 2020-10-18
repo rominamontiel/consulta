@@ -33,7 +33,7 @@ section {
       overflow: hidden;
       position: absolute;
       background: white;
-      transition-duration: .8s;
+      transition: all 0.7s cubic-bezier(.29, .37, 0, .99);
       opacity: 0;
       top: 50%;
       transform: translateY(-50%) scale(0.87);
