@@ -10,13 +10,13 @@
 
     nav{
         width: 18rem;
-        background-color: #272522;
+        background-color: #0e1f2d;
         padding-top: 1rem;
 
         header{
             padding: 1rem 2rem;
             font-size: 1.7rem;
-            color: #93c8f7;
+            color: #64cece;
             font-weight: 500;
             margin-bottom: 2rem;
             display: flex;
@@ -44,14 +44,17 @@
             height: 4rem;
             padding: 0 2rem;
             cursor: pointer;
-            color: #a7a7a7;
+            color: rgba(255, 255, 255, 0.671);
             text-decoration: none;
             position: relative;
+            opacity: .6;
+            font-weight: 300;
 
             &:hover,
             &.active{
-                background-color: #31302f;
-                color: #c0c0c0;
+                background-color: rgba(43, 203, 255, 0.071);
+                color: rgba(255, 255, 255, 0.884);
+                opacity: 1;
             }
     
             img{
@@ -107,7 +110,7 @@
             position: fixed;
             left: -82vw;
             z-index: 3;
-            background: #31302f;
+            background: #1d3648;
             height: 100vh;
             width: 80vw;
             box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
@@ -116,6 +119,10 @@
             
             a{
                 height: 4.3rem;
+
+                &.active{
+                    background-color: #2e536e;
+                }
             }
             
             &.active{

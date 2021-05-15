@@ -14,9 +14,51 @@
         <li>React, tiene una estructura de tipo árbol. Hay un "componente" inicial y se va abriendo en otros componentes
           que heredan.</li>
       </ul>
-      <div class="images">
+      <!-- <div class="images">
         <img src="assets/img/react/orden react.png" alt="">
         <img src="assets/img/react/orden react2.png" alt="">
-      </div>
+      </div>       -->
     </div>
-</article>
+  </article>
+  
+  <article>
+    <h2>Clases</h2>
+    <p><s>className="content-init"</s></p>
+    <p><s>className={{'{'}}'txt-box ' + classAnimation{{'}'}}</s></p>
+    <p><s>className={{'{'}}'back-menu ' + actionMenuMobile(){{'}'}}</s></p>
+    <p><s>className={{'{'}}pageIndex === 1 ? 'active' : ''{{'}'}}</s></p>
+    <p><s>className={{'{'}}'show-msg ' + (emailError === 'delivered' ? 'success' : emailError === 'error' ? 'error' : ''){{'}'}}</s></p>    
+    <p><s>className={{'{'}}`result-avglabel ${{'{'}}averageClass().class{{'}'}}`{{'}'}}</s></p>
+  </article>
+  
+  <article>
+    <h2>Onclick</h2>
+    <p><s>onClick={{'{'}}() => setMenuMobile(''){{'}'}}</s></p>
+    <p><s>onClick={{'{'}}() => setMenuMobile('active-menu'){{'}'}}</s></p>
+    <p><s>onClick={{'{'}}() => sendContact(){{'}'}}</s></p>
+  </article>
+
+  <article>
+    <h2>Style inline</h2>
+    <p><s> &lt;div style={{'{'}}{{'{'}}color: "red"{{'}'}}{{'}'}}&gt; </s></p>
+    <p><s>&lt;div className="box" style={{'{'}}{{'{'}} width: `${{'{'}}neutralWidth{{'}'}}%` {{'}'}}{{'}'}}&gt;</s></p>
+  </article>
+
+  <article>
+    <h2># Variable como texto en el html</h2>
+    <p><s>const var1 = var2 * 100;</s></p>
+    <p><s>&lt;span&gt;{{'{'}}`${{'{'}}var1{{'}'}}%`{{'}'}}&lt;/span&gt;</s></p>
+  </article>
+
+  <article>
+    <h2>Seteo y uso de una variable string</h2>
+    <p>1. Declaración (variable / metodo para setear / valor inicial) → <s>const [menuMobile, setMenuMobile] = useState(''); </s></p>
+    <p>2. Setear valor → <s>onClick={{'{'}}() => setMenuMobile('active-menu'){{'}'}}</s></p>
+    <p>3. Uso → <s>className={{'{'}}'back-menu ' + menuMobile{{'}'}}</s></p>
+    <h2><br>Variable tipo número</h2>
+    <p>1. <s>const [menuMobile, setMenuMobile] = useState(''); </s></p>
+    <p>Uso:</p>
+    <p><s>return setCurrentSlide(0);</s></p>
+    <p><s>return setCurrentSlide(listSlide.length - 1)</s></p>
+    <p><s>return setCurrentSlide(currentSlide - 1)</s></p>
+  </article>
